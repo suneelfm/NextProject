@@ -18,7 +18,7 @@
 }
 
 .filedContainer {
-  padding: calc(5px + 2vmin);
+  padding: 0 calc(5px + 2vmin) calc(10px + 3vmin);
 }
 
 .inputField {
@@ -26,4 +26,13 @@
   height: calc(20px + 3vmin);
   border-radius: 5px;
   padding: 1.5vmin;
+}
+
+.errorContainer {
+  font-size: calc(5px + 1vmin);
+  color: red;
+}
+
+.labels{
+  padding: calc(2px + 1vmin) calc(5px + 2vmin);
 }
