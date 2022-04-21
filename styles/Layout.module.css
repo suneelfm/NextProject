@@ -1,0 +1,44 @@
+.mainBody {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: lightgray;
+}
+
+.headerContainer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: calc(30px + 2vmin);
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px 5px gray;
+  z-index: 1002;
+  background-color: white;
+}
+
+.sidebarContainer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: calc(30px + 2vmin);
+  width: calc(30px + 2vmin);
+  display: flex;
+  justify-content: center;
+  box-shadow: 2px 4px 5px gray;
+  z-index: 1002;
+  background-color: white;
+}
+
+.routingOutlet {
+  position: absolute;
+  left: calc(40px + 3vmin);
+  top: calc(40px + 3vmin);
+  right: calc(10px + 2vmin);
+  bottom: calc(10px + 2vmin);
+  background-color: white;
+  border-radius: 10px;
+}
