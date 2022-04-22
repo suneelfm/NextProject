@@ -4,6 +4,7 @@
   right: 0;
   top: 0;
   bottom: 0;
+
   background-color: lightgray;
 }
 
@@ -25,7 +26,7 @@
   left: 0;
   bottom: 0;
   top: calc(30px + 2vmin);
-  width: calc(30px + 2vmin);
+  width: calc(30px + 2vw);
   display: flex;
   justify-content: center;
   box-shadow: 2px 4px 5px gray;
@@ -35,10 +36,13 @@
 
 .routingOutlet {
   position: absolute;
-  left: calc(40px + 3vmin);
+  left: calc(50px + 2vw);
   top: calc(40px + 3vmin);
-  right: calc(10px + 2vmin);
-  bottom: calc(10px + 2vmin);
+  bottom: 0;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 10px 0 0 0;
+  padding: calc(5px + 1vmin);
+  width: calc(30px + 94vw);
+  overflow-y: auto;
+  overflow-x: hidden;
 }

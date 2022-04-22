@@ -13,7 +13,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     debugger;
-    const res = await signIn("credentials", {
+    const res = await signIn("Credentials", {
       userName: userName,
       password: password,
       redirect: false,

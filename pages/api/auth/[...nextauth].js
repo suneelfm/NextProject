@@ -2,18 +2,17 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export default NextAuth({
+  secret: process.env.SECRET,
   session: { jwt: true, maxAge: 30 * 60 },
   providers: [
     CredentialsProvider({
-      name: "Credentials",
-    //   credentials: {
-    //     userName: { label: "Username", type: "text" },
-    //     password: { label: "Password", type: "password" },
-    //   },
+      name: "credentials",
       async authorize(credentials) {
         try {
           return { userName: "suneelfm", password: "Suneel@123" };
-        } catch (error) {}
+        } catch (error) {
+          return null;
+        }
       },
     }),
   ],

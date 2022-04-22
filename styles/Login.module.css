@@ -7,6 +7,7 @@
   background-image: linear-gradient(rgb(5, 5, 74), rgb(107, 107, 171), white);
   justify-content: center;
   align-items: center;
+  z-index: 1200;
 }
 
 .loginForm {
@@ -33,6 +34,6 @@
   color: red;
 }
 
-.labels{
+.labels {
   padding: calc(2px + 1vmin) calc(5px + 2vmin);
 }
