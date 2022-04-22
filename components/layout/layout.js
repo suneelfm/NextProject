@@ -1,4 +1,9 @@
-import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  faBars,
+  faSearch,
+  faShoppingBag,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Grid, MenuItem, MenuList } from "@mui/material";
 import { signOut, useSession } from "next-auth/react";
@@ -10,10 +15,11 @@ import styles from "../../styles/Layout.module.css";
 export default function Layout({ Component, props }) {
   const [openMenu, setopenMenu] = useState(false);
   const [openProfileOptions, setopenProfileOptions] = useState(false);
-  const { data: session, status } = useSession();
+  const { data: session, status} = useSession();
   const router = useRouter();
   useEffect(() => {
-    if (status !== "authenticated") {
+    console.log(session);
+    if (status === "unauthenticated") {
       router.push("/auth/login");
     }
   }, [session]);
@@ -24,7 +30,7 @@ export default function Layout({ Component, props }) {
   return (
     <Grid container className={styles.mainBody}>
       {/* <Grid container className=" headerBar" alignItems={"center"}> */}
-      <Grid container className={styles.headerContainer}>
+      <Grid container xs={12} className={styles.headerContainer}>
         <Grid
           container
           item
@@ -37,7 +43,7 @@ export default function Layout({ Component, props }) {
             onClick={() => setopenMenu(!openMenu)}
           />
         </Grid>
-        <Grid item xs={6}></Grid>
+        <Grid item xs={5} ml="4vw"></Grid>
         <Grid container item xs={3} justifyContent={"right"}>
           <Grid className={styles.searchField}>
             <Grid>
@@ -47,10 +53,23 @@ export default function Layout({ Component, props }) {
               <input
                 type={"search"}
                 className={styles.searchInput}
-                placeholder="Search on Nykaa"
+                placeholder="Search"
               />
             </Grid>
           </Grid>
+        </Grid>
+        <Grid
+          container
+          position={"relative"}
+          item
+          xs={1}
+          justifyContent={"right"}
+        >
+          <FontAwesomeIcon
+            icon={faShoppingBag}
+            onClick={() => setshowBag(true)}
+          />
+          <i className="far fa-shopping-bag kartIcon" />
         </Grid>
         <Grid
           container
@@ -61,20 +80,8 @@ export default function Layout({ Component, props }) {
           alignItems="center"
           sx={{ cursor: "pointer" }}
         >
-          <i style={{ fontSize: "1.5vw" }} className="fal fa-user-alt" />
+          <FontAwesomeIcon icon={faUser} />
           <span style={{ marginLeft: "0.3vw", fontSize: "1vw" }}>Account</span>
-        </Grid>
-        <Grid
-          container
-          position={"relative"}
-          item
-          xs={1}
-          justifyContent={"right"}
-        >
-          <i
-            onClick={() => setshowBag(true)}
-            className="far fa-shopping-bag kartIcon"
-          />
         </Grid>
       </Grid>
       <Grid
@@ -84,31 +91,28 @@ export default function Layout({ Component, props }) {
       >
         {openMenu && (
           <Grid item xs={12}>
-            <Grid>
-              {/* <Link to={"nykaacategories"}> */}
-              <b className="nykaatabs">Categories</b>
-              {/* </Link> */}
-            </Grid>
-            <Grid>
-              {/* <Link to={"nykaabrands"}> */}
-              <b className="nykaatabs">Brands</b>
-              {/* </Link> */}
-            </Grid>
-            <Grid>
-              {/* <Link to={"nykaafashion"}> */}
-              <b className="nykaatabs">Nykaa Fashion</b>
-              {/* </Link> */}
-            </Grid>
-            <Grid>
-              {/* <Link to={"beautyadvice"}> */}
-              <b className="nykaatabs">Beauty Advice</b>
-              {/* </Link> */}
-            </Grid>
-            <Grid>
-              <a href="https://www.nykaa.com/nykaa-network/home">
-                <b className="nykaatabs">Nykaa Network</b>
-              </a>
-            </Grid>
+            <MenuList>
+              <Link href={"/home"} passHref>
+                <MenuItem>
+                  <b>Home</b>
+                </MenuItem>
+              </Link>
+              <Link href={"/shopping"} passHref>
+                <MenuItem>
+                  <b>Shopping</b>
+                </MenuItem>
+              </Link>
+              <Link href={"/movies"} passHref>
+                <MenuItem>
+                  <b>Movies</b>
+                </MenuItem>
+              </Link>
+              <MenuItem>
+                <a href="https://www.nykaa.com/nykaa-network/home">
+                  <b className="nykaatabs">Nykaa Network</b>
+                </a>
+              </MenuItem>
+            </MenuList>
           </Grid>
         )}
       </Grid>

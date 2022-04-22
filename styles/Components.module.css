@@ -17,3 +17,33 @@
   border-radius: 0.2vw;
   text-align: center;
 }
+
+.inputGroup {
+  position: relative;
+  height: calc(20px + 2.5vmin);
+  border-radius: 5px;
+  border: 1px solid;
+  margin: calc(5px + 3vmin);
+}
+
+.formControl {
+  height: 100%;
+  width: 90%;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  padding: 0.5vw;
+  outline: none;
+}
+
+.inputGroupAppend {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  width: 10%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px 5px 0;
+}
