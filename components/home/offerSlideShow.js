@@ -3,18 +3,18 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../../styles/Components.module.css";
 
-export default function OfferSlideShow() {
-  const images = [
+export default function OfferSlideShow({
+  images = [
     "../offers/images1.jpg",
     "../offers/images2.jpg",
+    "../movies/download3.jfif",
     "../offers/images3.jpg",
-    "../offers/images4.jpg",
-    "../offers/images5.jpg",
-    "../offers/images6.jpg",
+    "../movies/download4.jfif",
     "../offers/images7.jpg",
+    "../movies/download5.jfif",
     "../offers/images8.jpg",
-  ];
-
+  ],
+}) {
   return (
     <>
       <Carousel
