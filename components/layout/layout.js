@@ -8,11 +8,11 @@ import styles from "../../styles/Layout.module.css";
 export default function Layout({ Component, props }) {
   const { data: session, status } = useSession();
   const router = useRouter();
-  // useEffect(() => {
-  //   if (status !== "authenticated") {
-  //     router.push("/auth/login");
-  //   }
-  // }, [session]);
+  useEffect(() => {
+    if (status !== "authenticated") {
+      router.push("/auth/login");
+    }
+  }, [session]);
 
   // if (status !== "authenticated") {
   //   return <Component {...props} />;

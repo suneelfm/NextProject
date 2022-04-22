@@ -6,11 +6,13 @@ export default NextAuth({
   session: { jwt: true, maxAge: 30 * 60 },
   providers: [
     CredentialsProvider({
-      name: "credentials",
       async authorize(credentials) {
-        try {
-          return { userName: "suneelfm", password: "Suneel@123" };
-        } catch (error) {
+        if (
+          credentials.userName === "suneelfm" &&
+          credentials.password === "Suneel@123"
+        ) {
+          return { name: "Suneel F M", email: "suneel@abc.com" };
+        } else {
           return null;
         }
       },

@@ -12,33 +12,33 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    debugger;
-    const res = await signIn("Credentials", {
-      userName: userName,
-      password: password,
-      redirect: false,
-    });
-    debugger;
-    if (res.ok) {
-      router.push(router.query.callbackUrl || "/");
+    if (userName.trim() === "" && password.trim() === "") {
+      setError("Please enter your correct usename and password.");
     } else {
-      setError("Please check your credentials and try again");
+      const res = await signIn("credentials", {
+        userName: userName,
+        password: password,
+        redirect: false,
+      });
+      if (res.ok) {
+        router.push(router.query.callbackUrl || "/");
+      } else {
+        setError("Please check your credentials and try again.");
+      }
     }
   };
   return (
     <Grid container className={styles.loginBody}>
       <form className={styles.loginForm} onSubmit={handleSubmit}>
-        {error !== "" && (
-          <Grid
-            container
-            justifyContent={"center"}
-            className={styles.errorContainer}
-          >
-            {error}
-          </Grid>
-        )}
         <Grid container justifyContent={"center"}>
           <h1>Login</h1>
+        </Grid>
+        <Grid
+          container
+          justifyContent={"center"}
+          className={styles.errorContainer}
+        >
+          {error}
         </Grid>
         <label className={styles.labels}>Username:</label>
         <Grid
@@ -46,7 +46,13 @@ export default function Login() {
           justifyContent={"center"}
           className={styles.filedContainer}
         >
-          <input type={"text"} className={styles.inputField} />
+          <input
+            type={"text"}
+            value={userName}
+            placeholder="Enter your User Name"
+            className={styles.inputField}
+            onChange={(e) => setuserName(e.target.value)}
+          />
         </Grid>
         <label className={styles.labels}>Password:</label>
         <Grid
@@ -54,7 +60,13 @@ export default function Login() {
           justifyContent={"center"}
           className={styles.filedContainer}
         >
-          <input type={"password"} className={styles.inputField} />
+          <input
+            type={"password"}
+            value={password}
+            placeholder="Enter your Password"
+            className={styles.inputField}
+            onChange={(e) => setpassword(e.target.value)}
+          />
         </Grid>
         <Grid
           container
