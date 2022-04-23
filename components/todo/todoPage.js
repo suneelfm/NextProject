@@ -9,7 +9,7 @@ import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 export default function TodoPage(props) {
   const [input, setinput] = useState("");
   const [message, setmessage] = useState("");
-  const [todolist, settodolist] = useState({ data: [] });
+  const [todolist, settodolist] = useState(props.data || { data: [] });
   const [isModify, setisModify] = useState(false);
   const [modificationid, setmodificationid] = useState(null);
   const [toastMessage, settoastMessage] = useState({});
@@ -20,15 +20,14 @@ export default function TodoPage(props) {
       .get(`https://asmita-mern.herokuapp.com/todo/get`)
       .then((response) => {
         settodolist(response);
-      });
-    //   .catch((err) =>
-    //     toastMessage({ appearance: "error", message: `Error: ${err.message}` })
-    //   );
+      })
+      .catch((err) =>
+        settoastMessage({
+          appearance: "error",
+          message: `Error: ${err.message}`,
+        })
+      );
   };
-
-  useEffect(() => {
-    getToDoList();
-  }, []);
 
   const handleFrom = async (event) => {
     event.preventDefault();
@@ -180,6 +179,19 @@ export default function TodoPage(props) {
           </Grid>
           <Grid item xs={12} md={5} textAlign="center">
             <Button
+              type="button"
+              onClick={() => {
+                setmessage("");
+                setisModify(false);
+                setmodificationid(null);
+                setinput("");
+              }}
+              variant="contained"
+              className={todoStyles.button}
+            >
+              Cancel
+            </Button>
+            <Button
               type="submit"
               name=""
               id=""
@@ -191,7 +203,7 @@ export default function TodoPage(props) {
           </Grid>
         </Grid>
       </form>
-      {todolist.data.length > 0 && (
+      {todolist?.data?.length > 0 && (
         <form className={todoStyles.formcontainer}>
           <Grid
             container
@@ -233,16 +245,3 @@ export default function TodoPage(props) {
     </>
   );
 }
-
-// TodoPage.getInitialProps = async function () {
-//   debugger;
-//   const res = await axios
-//     .get(`https://asmita-mern.herokuapp.com/todo/get`)
-//     .then((response) => {
-//       return response;
-//     });
-//   const data = await res;
-//   return {
-//     data,
-//   };
-// };
