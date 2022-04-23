@@ -21,7 +21,7 @@ export default function Login() {
         redirect: false,
       });
       if (res.ok) {
-        router.push(router.query.callbackUrl || "/");
+        router.push(router.query.callbackUrl || "/home");
       } else {
         setError("Please check your credentials and try again.");
       }

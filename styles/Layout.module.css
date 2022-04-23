@@ -97,3 +97,8 @@
   margin: calc(10px + 1vmin);
   font-size: calc(5px + 2vmin);
 }
+
+.menuItems {
+  font-size: calc(5px + 0.5vw);
+  padding: calc(5px + 1vmin) calc(5px + 1.5vmin);
+}

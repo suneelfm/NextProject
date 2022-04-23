@@ -63,13 +63,13 @@ export default function MoviesPage() {
       .get(`https://www.omdbapi.com/?s=${text || searchText}&apikey=f056e2f7`)
       .then((res) => {
         if (res.data.Response === "True") {
-          console.log(res.data.Search);
-          setresult(res.data.Search);
+          console.log(res?.data?.Search);
+          setresult(res?.data?.Search);
           setmessage("");
           text = "";
         } else {
-          console.log(res.data.Error);
-          setmessage(res.data.Error);
+          console.log(res?.data?.Error);
+          setmessage(res?.data?.Error);
         }
       });
   };
@@ -84,6 +84,7 @@ export default function MoviesPage() {
             value={searchText}
             onChange={(e) => setsearchText(e.target.value)}
             onBlur={getData}
+            onKeyDown={(e) => e.key === "Enter" && getData()}
             className={styles.formControl}
           />
           <Grid className={styles.inputGroupAppend} onClick={startHearing}>
