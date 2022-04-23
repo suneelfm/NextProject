@@ -69,23 +69,27 @@ export default function Layout({ Component, props }) {
               >
                 <FontAwesomeIcon
                   icon={faShoppingBag}
-                  onClick={() => setshowBag(true)}
+                  // onClick={() => setshowBag(true)}
+                  className={styles.cartIcon}
                 />
-                <i className="far fa-shopping-bag kartIcon" />
               </Grid>
               <Grid
                 container
                 item
                 xs={1}
-                onClick={() => setopenProfileOptions(!openProfileOptions)}
                 justifyContent={"right"}
                 alignItems="center"
-                sx={{ cursor: "pointer" }}
               >
-                <FontAwesomeIcon icon={faUser} />
-                <span style={{ marginLeft: "0.3vw", fontSize: "1vw" }}>
-                  Account
-                </span>
+                <label
+                  htmlFor="account"
+                  onClick={() => setopenProfileOptions(!openProfileOptions)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <FontAwesomeIcon id="account" icon={faUser} />
+                  <span style={{ marginLeft: "0.3vw", fontSize: "1vw" }}>
+                    Account
+                  </span>
+                </label>
               </Grid>
             </Grid>
             <Grid

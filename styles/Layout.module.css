@@ -102,3 +102,9 @@
   font-size: calc(5px + 0.5vw);
   padding: calc(5px + 1vmin) calc(5px + 1.5vmin);
 }
+
+.cartIcon {
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+

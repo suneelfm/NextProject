@@ -234,15 +234,15 @@ export default function TodoPage(props) {
   );
 }
 
-TodoPage.getInitialProps = async function () {
-  debugger;
-  const res = await axios
-    .get(`https://asmita-mern.herokuapp.com/todo/get`)
-    .then((response) => {
-      return response;
-    });
-  const data = await res;
-  return {
-    data,
-  };
-};
+// TodoPage.getInitialProps = async function () {
+//   debugger;
+//   const res = await axios
+//     .get(`https://asmita-mern.herokuapp.com/todo/get`)
+//     .then((response) => {
+//       return response;
+//     });
+//   const data = await res;
+//   return {
+//     data,
+//   };
+// };
