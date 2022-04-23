@@ -30,6 +30,39 @@
   margin: 0.5vmin 0;
 }
 
+.passwordField {
+  position: relative;
+  height: calc(20px + 2.5vmin);
+  border-radius: 5px;
+  border: 1px solid;
+  margin: 0.5vmin 0;
+}
+
+.passwordInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  padding: 0.5vw;
+  outline: none;
+}
+
+.passwordFieldAppend {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(159, 158, 158);
+  width: 15%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px 5px 0;
+}
+
 .errorContainer {
   font-size: calc(5px + 1vmin);
   color: red;
