@@ -22,7 +22,7 @@
 .listArea {
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: 350vh;
+  max-height: 48vh;
   font-size: 1vw;
 }
 

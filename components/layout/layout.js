@@ -3,6 +3,7 @@ import {
   faBars,
   faSearch,
   faShoppingBag,
+  faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Grid, MenuItem, MenuList } from "@mui/material";
@@ -127,7 +128,13 @@ export default function Layout({ Component, props }) {
         <Grid container className={styles.profileOptions}>
           <MenuList className={styles.profileOptionsList}>
             <MenuItem>Profile</MenuItem>
-            <MenuItem onClick={() => signOut()}>Logout</MenuItem>
+            <MenuItem onClick={() => signOut()} sx={{ position: "relative" }}>
+              Logout{" "}
+              <FontAwesomeIcon
+                style={{ position: "absolute", right: "1vw" }}
+                icon={faSignOut}
+              />
+            </MenuItem>
           </MenuList>
         </Grid>
       )}
