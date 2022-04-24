@@ -1,5 +1,5 @@
-import { Button, Grid, Tooltip } from "@mui/material";
-import { useEffect, useState } from "react";
+import { Button, Grid } from "@mui/material";
+import { useState } from "react";
 import todoStyles from "../../styles/Todo.module.css";
 import styles from "../../styles/Login.module.css";
 import axios from "axios";
@@ -221,20 +221,20 @@ export default function TodoPage(props) {
                     <pre className={todoStyles.list}>{val.name}</pre>
                   </Grid>
                   <Grid item xs={6}>
-                    <Tooltip title="Modify ToDo">
-                      <FontAwesomeIcon
-                        icon={faPen}
-                        className={todoStyles.iconProp}
-                        onClick={() => setForModification(val._id, val.name)}
-                      />
-                    </Tooltip>
-                    <Tooltip title="Delete ToDo">
-                      <FontAwesomeIcon
-                        icon={faTrash}
-                        className={todoStyles.iconProp}
-                        onClick={() => deleteName(val._id)}
-                      />
-                    </Tooltip>
+                    <FontAwesomeIcon
+                      title="Modify Todo"
+                      id={index}
+                      icon={faPen}
+                      className={todoStyles.iconProp}
+                      onClick={() => setForModification(val._id, val.name)}
+                    />
+                    <FontAwesomeIcon
+                      title="Delete Todo"
+                      id={index}
+                      icon={faTrash}
+                      className={todoStyles.iconProp}
+                      onClick={() => deleteName(val._id)}
+                    />
                   </Grid>
                 </Grid>
               ))}

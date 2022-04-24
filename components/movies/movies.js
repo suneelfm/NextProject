@@ -46,7 +46,6 @@ export default function MoviesPage() {
         .map((result) => result[0])
         .map((result) => result.transcript)
         .join("");
-      console.log(speechToText);
       text = speechToText;
       setsearchText(speechToText);
     };
@@ -63,12 +62,10 @@ export default function MoviesPage() {
       .get(`https://www.omdbapi.com/?s=${text || searchText}&apikey=f056e2f7`)
       .then((res) => {
         if (res.data.Response === "True") {
-          console.log(res?.data?.Search);
           setresult(res?.data?.Search);
           setmessage("");
           text = "";
         } else {
-          console.log(res?.data?.Error);
           setmessage(res?.data?.Error);
         }
       });
