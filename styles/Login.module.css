@@ -47,7 +47,7 @@
   border: none;
   border-radius: 5px 0 0 5px;
   padding: 0.5vw;
-  outline: none;
+  /* outline: none; */
 }
 
 .passwordFieldAppend {

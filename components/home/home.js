@@ -28,7 +28,7 @@ export default function HomePage() {
   return (
     <>
       <Grid container item height={"25vw"} position={"relative"} top="0.3vw">
-        <OfferSlideShow></OfferSlideShow>
+        <OfferSlideShow />
       </Grid>
       <ProductDisplay products={movies} listTital="Movies" cardFor={"movies"} />
       <ProductDisplay

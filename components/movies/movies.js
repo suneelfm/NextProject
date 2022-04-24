@@ -124,7 +124,7 @@ export default function MoviesPage() {
       <Grid
         container
         height={"85%"}
-        sx={{ overflowY: "auto", overflowX: "hidden" }}
+        sx={{ overflowY: "auto", overflowX: "hidden", padding:"1vmin" }}
       >
         <Grid container item height={"25vw"} position={"relative"} top="0.3vw">
           <OfferSlideShow images={movies.map((item) => item.Poster)} />

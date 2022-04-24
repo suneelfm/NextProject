@@ -42,6 +42,7 @@ export default function Layout({ Component, pageProps }) {
               <FontAwesomeIcon
                 icon={faBars}
                 onClick={() => setopenMenu(!openMenu)}
+                style={{ cursor: "pointer" }}
               />
             </Grid>
             <Grid item xs={5} ml="4vw"></Grid>

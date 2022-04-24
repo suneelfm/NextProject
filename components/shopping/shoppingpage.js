@@ -4,14 +4,14 @@ import ProductDisplay from "../home/productDisplay";
 
 export default function ShoppingPage() {
   const offers = [
+    "../offers/images5.jpg",
+    "../offers/images4.jpg",
     "../offers/images1.jpg",
     "../offers/images2.jpg",
-    "../offers/images3.jpg",
-    "../offers/images4.jpg",
-    "../offers/images5.jpg",
     "../offers/images6.jpg",
-    "../offers/images7.jpg",
+    "../offers/images3.jpg",
     "../offers/images8.jpg",
+    "../offers/images7.jpg",
   ];
   const images = [
     "../images1.jpg",
