@@ -16,7 +16,7 @@ export default function OfferSlideShow({
   ],
 }) {
   return (
-    <>
+    <Grid width={"100%"}>
       <Carousel
         axis="horizontal"
         autoPlay
@@ -25,7 +25,7 @@ export default function OfferSlideShow({
         infiniteLoop={true}
         showArrows={true}
         showStatus={false}
-        width="95vw"
+        width="100%"
       >
         {images.map((image, index) => (
           <Grid
@@ -39,6 +39,6 @@ export default function OfferSlideShow({
           ></Grid>
         ))}
       </Carousel>
-    </>
+    </Grid>
   );
 }
