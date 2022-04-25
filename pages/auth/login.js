@@ -60,7 +60,7 @@ export default function Login() {
             ref={username}
             type={"text"}
             value={userName}
-            placeholder="Enter your User Name"
+            placeholder="Enter your Username"
             className={styles.inputField}
             onChange={(e) => setuserName(e.target.value)}
           />
@@ -107,7 +107,6 @@ export default function Login() {
                   }}
                 >
                   <FontAwesomeIcon icon={faEyeSlash} />
-                  <i className="fas fa-microphone-slash" />
                 </span>
               )}
             </Grid>
