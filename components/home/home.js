@@ -30,10 +30,10 @@ export default function HomePage() {
       <Grid container item height={"25vw"} position={"relative"} top="0.3vw">
         <OfferSlideShow />
       </Grid>
-      <ProductDisplay products={movies} listTital="Movies" cardFor={"movies"} />
+      <ProductDisplay products={movies} listTital="MOVIES" cardFor={"movies"} />
       <ProductDisplay
         products={images}
-        listTital="TOP BRANDS"
+        listTital="SHOPPING"
         bottomLabelReqired={true}
       />
     </>

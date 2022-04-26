@@ -30,12 +30,12 @@ export default function ShoppingPage() {
       </Grid>
       <ProductDisplay
         products={images}
-        listTital="Top Brands"
+        listTital="TOP BRANDS"
         bottomLabelReqired={true}
       />
       <ProductDisplay
         products={images}
-        listTital="TOP BRANDS"
+        listTital="ONLY ON NYKAA"
         bottomLabelReqired={true}
       />
     </>
