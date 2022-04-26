@@ -120,11 +120,6 @@ export default function Layout({ Component, pageProps }) {
                       <b>Movies</b>
                     </MenuItem>
                   </Link>
-                  <MenuItem className={styles.menuItems}>
-                    <a href="https://www.nykaa.com/nykaa-network/home">
-                      <b className="nykaatabs">Nykaa Network</b>
-                    </a>
-                  </MenuItem>
                 </MenuList>
               </Grid>
             )}
