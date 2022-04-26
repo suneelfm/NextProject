@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export default NextAuth({
-  secret: process.env.SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   session: { jwt: true, maxAge: 30 * 60 },
   providers: [
     CredentialsProvider({
