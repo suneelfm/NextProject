@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Login from "../../pages/auth/login";
+import SessionOut from "../../pages/sessionout";
 import styles from "../../styles/Layout.module.css";
 
 export default function Layout({ Component, pageProps }) {
@@ -20,13 +21,19 @@ export default function Layout({ Component, pageProps }) {
   const { data: session, status } = useSession();
   const router = useRouter();
   useEffect(() => {
-    if (status === "unauthenticated") {
+    console.log(router.pathname);
+    console.log(session);
+    if (session === null) {
       router.push("/auth/login");
     }
   }, [session]);
 
   if (status === "unauthenticated") {
-    return <Login />;
+    if (router.pathname === "/sessionout") {
+      return <SessionOut />;
+    } else if (router.pathname === "/auth/login") {
+      return <Login />;
+    }
   } else if (status === "authenticated") {
     return (
       <Grid container className={styles.mainBody}>
@@ -45,8 +52,8 @@ export default function Layout({ Component, pageProps }) {
                 style={{ cursor: "pointer" }}
               />
             </Grid>
-            <Grid item xs={5} ml="4vw"></Grid>
-            <Grid container item xs={3} justifyContent={"right"}>
+            <Grid item xs={1} md={5} ml="4vw"></Grid>
+            <Grid container item xs={5} md={3} justifyContent={"right"}>
               <Grid className={styles.searchField}>
                 <Grid>
                   <div className={styles.searchIcon}>
@@ -65,7 +72,7 @@ export default function Layout({ Component, pageProps }) {
               position={"relative"}
               item
               xs={1}
-              justifyContent={"right"}
+              justifyContent={"center"}
             >
               <FontAwesomeIcon
                 icon={faShoppingBag}
@@ -76,9 +83,11 @@ export default function Layout({ Component, pageProps }) {
             <Grid
               container
               item
-              xs={1}
+              xs={3}
+              md={1}
               justifyContent={"right"}
               alignItems="center"
+              sx={{ fontSize: "calc(10px + 1.5vmin)" }}
             >
               <label
                 htmlFor="account"
@@ -86,7 +95,12 @@ export default function Layout({ Component, pageProps }) {
                 style={{ cursor: "pointer" }}
               >
                 <FontAwesomeIcon id="account" icon={faUser} />
-                <span style={{ marginLeft: "0.3vw", fontSize: "1vw" }}>
+                <span
+                  style={{
+                    marginLeft: "0.3vw",
+                    fontSize: "calc(10px + 1.5vmin)",
+                  }}
+                >
                   Account
                 </span>
               </label>
@@ -95,7 +109,7 @@ export default function Layout({ Component, pageProps }) {
           <Grid
             container
             className={styles.sidebarContainer}
-            width={openMenu ? "10%" : "3%"}
+            width={openMenu ? "15%" : "5%"}
           >
             {openMenu && (
               <Grid item xs={12}>
@@ -120,11 +134,6 @@ export default function Layout({ Component, pageProps }) {
                       <b>Movies</b>
                     </MenuItem>
                   </Link>
-                  <MenuItem className={styles.menuItems}>
-                    <a href="https://www.nykaa.com/nykaa-network/home">
-                      <b className="nykaatabs">Nykaa Network</b>
-                    </a>
-                  </MenuItem>
                 </MenuList>
               </Grid>
             )}
@@ -134,7 +143,10 @@ export default function Layout({ Component, pageProps }) {
           <Grid item className={styles.profileOptions}>
             <MenuList className={styles.profileOptionsList}>
               <MenuItem>Profile</MenuItem>
-              <MenuItem onClick={() => signOut()} sx={{ position: "relative" }}>
+              <MenuItem
+                onClick={() => signOut({ redirect: "/auth/login" })}
+                sx={{ position: "relative" }}
+              >
                 Logout{" "}
                 <FontAwesomeIcon
                   style={{ position: "absolute", right: "1vw" }}
@@ -147,7 +159,7 @@ export default function Layout({ Component, pageProps }) {
         <Grid
           item
           className={styles.routingOutlet}
-          width={openMenu ? "89%" : "96%"}
+          width={openMenu ? "84%" : "94%"}
         >
           <Component {...pageProps} />
         </Grid>

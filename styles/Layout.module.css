@@ -95,16 +95,15 @@
 
 .menuIcon {
   padding: 0 calc(10px + 1vmin);
-  font-size: calc(5px + 2vmin);
+  font-size: calc(10px + 2vmin);
 }
 
 .menuItems {
-  font-size: calc(5px + 0.5vw);
-  padding: calc(5px + 1vmin) calc(5px + 1.5vmin);
+  font-size: calc(5px + 1vw) !important;
+  padding: calc(2px + 1vmin) calc(2px + 1.5vmin) !important;
 }
 
 .cartIcon {
-  font-size: 1.5vw;
+  font-size: calc(10px + 1.5vmin);
   cursor: pointer;
 }
-
