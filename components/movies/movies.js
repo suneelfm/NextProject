@@ -74,17 +74,25 @@ export default function MoviesPage() {
   return (
     <>
       <Grid container justifyContent={"center"}>
-        <Grid className={styles.inputGroup} sx={{ width: "50%" }}>
-          <input
-            type="text"
-            placeholder="Search Movies"
-            value={searchText}
-            onChange={(e) => setsearchText(e.target.value)}
-            onBlur={getData}
-            onKeyDown={(e) => e.key === "Enter" && getData()}
-            className={styles.formControl}
-          />
-          <Grid className={styles.inputGroupAppend} onClick={startHearing}>
+        <Grid container className={styles.inputGroup} sx={{ width: "50%" }}>
+          <Grid item xs={9} md={11}>
+            <input
+              type="text"
+              placeholder="Search Movies"
+              value={searchText}
+              onChange={(e) => setsearchText(e.target.value)}
+              onBlur={getData}
+              onKeyDown={(e) => e.key === "Enter" && getData()}
+              className={styles.formControl}
+            />
+          </Grid>
+          <Grid
+            item
+            xs={3}
+            md={1}
+            className={styles.inputGroupAppend}
+            onClick={startHearing}
+          >
             {isStartHearing ? (
               <span
                 className="input-group-text"

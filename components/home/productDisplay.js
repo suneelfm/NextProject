@@ -11,7 +11,12 @@ export default function ProductDisplay({
 }) {
   return (
     <>
-      <Grid container justifyContent={"center"} mt={3} sx={{ fontSize: "2vw" }}>
+      <Grid
+        container
+        justifyContent={"center"}
+        mt={3}
+        sx={{ fontSize: "calc(10px + 1vw)" }}
+      >
         {listTital}
       </Grid>
       <Grid container spacing={3}>
