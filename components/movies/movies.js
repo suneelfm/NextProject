@@ -121,7 +121,14 @@ export default function MoviesPage() {
               </span>
             )}
           </Grid>
-          <div style={{ height: "calc(5px + 2vmin)", color: "red" }}>
+          <div
+            style={{
+              height: "calc(5px + 2vmin)",
+              color: "red",
+              fontSize: "calc(5px + 1vmin)",
+              marginTop: "calc(1px + 1.5vmin)",
+            }}
+          >
             {message}
           </div>
         </Grid>
