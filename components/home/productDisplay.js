@@ -17,7 +17,7 @@ export default function ProductDisplay({
         mt={3}
         sx={{ fontSize: "calc(10px + 1vw)" }}
       >
-        {listTital}
+        <b>{listTital}</b>
       </Grid>
       <Grid container spacing={3}>
         {products?.map((image, index) => (

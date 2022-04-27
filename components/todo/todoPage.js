@@ -174,6 +174,7 @@ export default function TodoPage(props) {
               onChange={(e) => setinput(e.target.value)}
               placeholder="Enter your task"
               className={styles.inputField}
+              style={{ fontSize: "calc(5px + 1vmin)" }}
             />
             <div className={styles.errorContainer}>{message}</div>
           </Grid>

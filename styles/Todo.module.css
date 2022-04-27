@@ -9,6 +9,8 @@
 
 .button {
   margin: 0.5vmin !important;
+  font-size: calc(5px + 1vmin) !important;
+  padding: calc(1px + 1vmin) !important;
 }
 
 .listHead {
@@ -16,18 +18,18 @@
   justify-content: center;
   margin-bottom: 2vw;
   margin-top: 0.5vw;
-  font-size: 1.7vw;
+  font-size: calc(10px + 1vmin);
 }
 
 .listArea {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 48vh;
-  font-size: 1vw;
+  font-size: calc(10px + 1vmin);
 }
 
 .list {
-  font-size: 1.2vw;
+  font-size: calc(10px + 1vmin);
   font-weight: 600;
   white-space: pre-wrap;
   word-wrap: break-word;
