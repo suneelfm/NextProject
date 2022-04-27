@@ -47,14 +47,16 @@ export default function ProductDisplay({
                   position="absolute"
                   bottom={0}
                   left="0.45vw"
-                  height="3vw"
+                  height="calc()"
                   width={"96%"}
                   className={styles.productCardBottomContent}
                 >
-                  <Typography sx={{ fontSize: "1vw", color: "red" }}>
+                  <Typography
+                    sx={{ fontSize: "calc(5px + 1vw)", color: "red" }}
+                  >
                     {discount}
                   </Typography>
-                  <Typography sx={{ fontSize: "0.8vw" }}>
+                  <Typography sx={{ fontSize: "calc(5px + 0.8vw)" }}>
                     On International Bestsellers!
                   </Typography>
                 </Grid>
