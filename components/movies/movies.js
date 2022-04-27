@@ -121,7 +121,7 @@ export default function MoviesPage() {
       <Grid
         container
         height={"85%"}
-        sx={{ overflowY: "auto", overflowX: "hidden", padding:"1vmin" }}
+        sx={{ overflowY: "auto", overflowX: "hidden", padding: "1vmin" }}
       >
         <Grid container item height={"25vw"} position={"relative"} top="0.3vw">
           <OfferSlideShow images={movies.map((item) => item.Poster)} />
@@ -129,19 +129,19 @@ export default function MoviesPage() {
         {result.length > 0 ? (
           <ProductDisplay
             products={result}
-            listTital="Your Movies Here"
+            listTital="YOUR MOVIES HERE"
             cardFor={"movies"}
           />
         ) : (
           <>
             <ProductDisplay
               products={movies}
-              listTital="Kannada"
+              listTital="KANNADA"
               cardFor={"movies"}
             />
             <ProductDisplay
               products={movies}
-              listTital="Telugu"
+              listTital="HINDI"
               cardFor={"movies"}
             />
           </>

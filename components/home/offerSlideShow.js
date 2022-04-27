@@ -5,13 +5,14 @@ import styles from "../../styles/Components.module.css";
 
 export default function OfferSlideShow({
   images = [
-    "../offers/images1.jpg",
-    "../offers/images2.jpg",
+    "todo.png",
     "../movies/download3.jfif",
-    "../offers/images3.jpg",
+    "../offers/images1.jpg",
     "../movies/download4.jfif",
-    "../offers/images7.jpg",
+    "../offers/images2.jpg",
+    "../offers/images3.jpg",
     "../movies/download5.jfif",
+    "../offers/images7.jpg",
     "../offers/images8.jpg",
   ],
 }) {
