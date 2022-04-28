@@ -58,7 +58,7 @@ export default function Layout({ Component, pageProps }) {
                 <Grid item xs={2} md={1} className={styles.searchIcon}>
                   <FontAwesomeIcon icon={faSearch} />
                 </Grid>
-                <Grid item xs={10} md={11}>
+                <Grid item xs={10} md={11} width="100%" height={"100%"}>
                   <input
                     type={"search"}
                     className={styles.searchInput}
@@ -109,7 +109,7 @@ export default function Layout({ Component, pageProps }) {
           <Grid
             container
             className={styles.sidebarContainer}
-            width={openMenu ? "15%" : "5%"}
+            width={openMenu ? "calc(20px + 15vmin)" : "calc(15px + 5vmin)"}
           >
             {openMenu && (
               <Grid item xs={12}>
@@ -159,7 +159,11 @@ export default function Layout({ Component, pageProps }) {
         <Grid
           item
           className={styles.routingOutlet}
-          width={openMenu ? "84%" : "94%"}
+          width={
+            openMenu
+              ? `calc(${window.innerWidth - 30}px - 15vmin)`
+              : `calc(${window.innerWidth - 25}px - 5vmin)`
+          }
         >
           <Component {...pageProps} />
         </Grid>
