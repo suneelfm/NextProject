@@ -1,14 +1,14 @@
 .formcontainer {
-  border: 0.15vw solid gray;
+  border: 0.3vmin solid gray;
   border-radius: 1vw;
-  padding: 1.5vw 1.5vw 0vw 1.5vw;
-  margin: 1vw;
+  padding: 1vmin 1vmin 0vw 1vmin;
+  margin: 1vmin;
   color: black;
   background-color: white;
 }
 
 .button {
-  margin: 0.5vmin !important;
+  margin: 0.5vmin 1vmin 2vmin 1vmin !important;
   font-size: calc(5px + 1vmin) !important;
   padding: calc(1px + 1vmin) !important;
 }
