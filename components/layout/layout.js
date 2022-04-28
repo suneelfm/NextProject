@@ -115,22 +115,46 @@ export default function Layout({ Component, pageProps }) {
               <Grid item xs={12}>
                 <MenuList>
                   <Link href={"/home"} passHref>
-                    <MenuItem className={styles.menuItems}>
+                    <MenuItem
+                      className={styles.menuItems}
+                      sx={{
+                        backgroundColor:
+                          router.pathname === "/home" && "lightgray",
+                      }}
+                    >
                       <b>Home</b>
                     </MenuItem>
                   </Link>
                   <Link href={"/todo"} passHref>
-                    <MenuItem className={styles.menuItems}>
+                    <MenuItem
+                      className={styles.menuItems}
+                      sx={{
+                        backgroundColor:
+                          router.pathname === "/todo" && "lightgray",
+                      }}
+                    >
                       <b>Todo</b>
                     </MenuItem>
                   </Link>
                   <Link href={"/shopping"} passHref>
-                    <MenuItem className={styles.menuItems}>
+                    <MenuItem
+                      className={styles.menuItems}
+                      sx={{
+                        backgroundColor:
+                          router.pathname === "/shopping" && "lightgray",
+                      }}
+                    >
                       <b>Shopping</b>
                     </MenuItem>
                   </Link>
                   <Link href={"/movies"} passHref>
-                    <MenuItem className={styles.menuItems}>
+                    <MenuItem
+                      className={styles.menuItems}
+                      sx={{
+                        backgroundColor:
+                          router.pathname === "/movies" && "lightgray",
+                      }}
+                    >
                       <b>Movies</b>
                     </MenuItem>
                   </Link>
