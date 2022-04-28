@@ -76,18 +76,20 @@
 }
 
 .searchInput {
-  height: calc(15px + 2vmin);
+  height: 100%;
   border: none;
   color: black;
   background-color: inherit;
   padding: 0.5vw;
-  width: calc(50px + 10vmin);
+  width: 100%;
   outline: none;
   font-size: calc(5px + 1vmin);
 }
 
 .searchIcon {
-  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0.5vw;
   cursor: pointer;
   width: calc(5px + 1vmin);

@@ -52,13 +52,13 @@ export default function Layout({ Component, pageProps }) {
                 style={{ cursor: "pointer" }}
               />
             </Grid>
-            <Grid item xs={1} md={5} ml="4vw"></Grid>
-            <Grid container item xs={5} md={3} justifyContent={"right"}>
-              <Grid className={styles.searchField}>
-                <Grid>
-                  <div className={styles.searchIcon}>
-                    <FontAwesomeIcon icon={faSearch} />
-                  </div>
+            <Grid item xs={1} md={5} lg={6} ml="4vw"></Grid>
+            <Grid container item xs={5} md={3} lg={2} justifyContent={"right"}>
+              <Grid container className={styles.searchField}>
+                <Grid item xs={2} md={1} className={styles.searchIcon}>
+                  <FontAwesomeIcon icon={faSearch} />
+                </Grid>
+                <Grid item xs={10} md={11}>
                   <input
                     type={"search"}
                     className={styles.searchInput}
